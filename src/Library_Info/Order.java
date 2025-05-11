@@ -3,25 +3,26 @@ import java.util.Date;
 import java.util.List;
 
 public class Order {
-    private String orderId;
-    private User user;
-    private List<Books> book;
-    private Date orderDate;
 
-    public Order(String orderId, User user, List<Books> book, Date orderDate) {
+  int orderId;
+    User user;
+    Books book;
+    int quantity;
+
+    public Order(int orderId, User user, Books book, int quantity) {
         this.orderId = orderId;
         this.user = user;
         this.book = book;
-        this.orderDate = orderDate;
+        this.quantity = quantity;
     }
-    public String getOrderId() { return orderId; }
-    public User getUser() { return user; }
-    public List<Books> getBooks() { return book; }
-    public Date getOrderDate() { return orderDate; }
+
+    public double getTotalPrice() {
+        return quantity * book.getPrice();
+    }
 
     @Override
-    public String toString(){
-        return String.format("order[orderId=%s, user=%s, date=%s, book=%s]"
-        ,orderId, user.getName(),orderDate,book);
+    public String toString() {
+        return "Order#" + orderId + " - " + book.getTitle() + " x" + quantity +
+                " by " + user.getName() + " | Total: $" + getTotalPrice();
     }
 }

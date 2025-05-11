@@ -9,9 +9,10 @@ public class Books {
     private int numberOfPages;
     private String isbn;
     private double price;
+    private String publisher;
 
-    public Books(String title, String author, String genre, int publicationYear,
-                int numberOfPages, String isbn, double price) {
+    public Books(String title, String author, String genre, int publicationYear, int numberOfPages,
+                String isbn, double price ) {
         this.title = title;
         this.author = author;
         this.genre = genre;
