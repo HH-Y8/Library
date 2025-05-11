@@ -1,13 +1,11 @@
 package Library_Info;
 
-import com.sun.xml.internal.ws.api.ha.StickyFeature;
-
-public class Auther {
+public class Author {
     private String name;
     private int birthYear;
     private String nationality;
 
-    public Auther(String name, String nationality, int birthYear) {
+    public Author(String name, String nationality, int birthYear) {
         this.name = name;
         this.nationality = nationality;
         this.birthYear = birthYear;
@@ -27,6 +25,6 @@ public class Auther {
 
     @Override
     public String toString() {
-        return String.format("Auther[name=%s,nationality=%s,birthYear=%d]", name, nationality, birthYear);
+        return String.format("Author[name=%s,nationality=%s,birthYear=%d]", name, nationality, birthYear);
     }
 }
